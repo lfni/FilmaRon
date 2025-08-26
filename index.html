@@ -1698,12 +1698,182 @@
                         <div class="widget text-left">
                             <div class="textwidget">
                                 <h6 class="footer-link-title">اپلیکیشن ما</h6>
-                                <div class="d-flex align-items-center">
-                                    <a class="app-image" href="#">
-                                        <img src="Theme/images/footer/01.jpg" alt="play-store">
-                                    </a><br>
-                                    <a class="ml-3 app-image" href="#"><img src="Theme/images/footer/02.jpg" alt="app-store"></a>
-                                </div>
+<div class="d-flex align-items-center r-mb-23" data-animation-in="fadeInUp" data-delay-in="1">
+  <a href="#" class="btn btn-hover iq-button" id="openModal">
+    <i class="fa fa-download mr-2" aria-hidden="true"></i>دانلود
+  </a>
+</div>
+
+<!-- مودال -->
+<div id="downloadModal" class="modal">
+  <div class="modal-content cinematic">
+    <span class="close">&times;</span>
+    <h2>🎬 لینک‌های دانلود</h2>
+    <p>از طریق دکمه های زیر میتوانید انیمیشن را دانلود کنید :</p>
+    <ul>
+      
+      <!-- فایل مستقیم (کامنت شده) -->
+      <<li><a href="App/DL/FilmaRon.apk" class="btn-link" download>دانلود فایل مستقیم</a></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+/* پس‌زمینه مودال */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  overflow: auto;
+}
+
+/* محتوای مودال */
+.modal-content {
+  position: relative;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  margin: 7% auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.6);
+  transform: perspective(1000px) rotateY(-90deg) scale(0.5);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* وقتی فعال میشه */
+.modal.show .modal-content {
+  transform: perspective(1000px) rotateY(0deg) scale(1);
+  opacity: 1;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ff4040;
+  text-shadow: 0px 0px 12px rgba(255, 64, 64, 0.8);
+}
+
+.modal-content p {
+  margin: 12px 0;
+  font-size: 15px;
+  color: #ddd;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  margin: 12px 0;
+}
+
+.modal-content .btn-link {
+  display: inline-block;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #e50914, #b20710);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 18px rgba(229, 9, 20, 0.6);
+}
+
+.modal-content .btn-link:hover {
+  background: linear-gradient(135deg, #ff1b2d, #c60a18);
+  transform: scale(1.07);
+  box-shadow: 0px 0px 28px rgba(255, 20, 30, 0.9);
+}
+
+/* دکمه بستن */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff4040;
+  transform: scale(1.2);
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+  }
+  .modal-content h2 {
+    font-size: 20px;
+  }
+  .modal-content p {
+    font-size: 13px;
+  }
+  .modal-content .btn-link {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  .modal-content h2 {
+    font-size: 18px;
+  }
+  .modal-content p {
+    font-size: 12px;
+  }
+  .modal-content .btn-link {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+</style>
+
+<script>
+const modal = document.getElementById("downloadModal");
+const btn = document.getElementById("openModal");
+const span = document.getElementsByClassName("close")[0];
+
+// باز کردن مودال با انیمیشن
+btn.onclick = function(e) {
+  e.preventDefault();
+  modal.style.display = "block";
+  setTimeout(() => modal.classList.add("show"), 20);
+}
+
+// بستن مودال
+span.onclick = function() {
+  modal.classList.remove("show");
+  setTimeout(() => modal.style.display = "none", 600);
+}
+
+// بستن با کلیک روی پس‌زمینه
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.classList.remove("show");
+    setTimeout(() => modal.style.display = "none", 600);
+  }
+}
+</script>
                             </div>
                         </div>
                     </div>
