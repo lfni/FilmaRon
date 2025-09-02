@@ -1,0 +1,10 @@
+
+Options -Indexes
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^title/([^/]+)/?$ title.php?slug=$1 [L,QSA]
+RewriteRule ^movies/?$ movies.php [L,QSA]
+RewriteRule ^series/?$ series.php [L,QSA]
+RewriteRule ^auth/login/?$ auth/login.php [L,QSA]
+RewriteRule ^auth/register/?$ auth/register.php [L,QSA]
+</IfModule>

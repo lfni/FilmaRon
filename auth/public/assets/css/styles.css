@@ -1,0 +1,7 @@
+
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
+.glass { background: rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.dark .glass { background: rgba(17,17,17,0.5); }
+.alert { border: 1px solid rgba(255,0,0,0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+[dir="rtl"] .ltr-only { display:none } [dir="ltr"] .rtl-only { display:none }
